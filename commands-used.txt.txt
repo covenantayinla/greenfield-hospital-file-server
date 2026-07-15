@@ -1,0 +1,45 @@
+GREENFIELD SPECIALIST HOSPITAL PRACTICAL
+
+TASK 1
+hostnamectl set-hostname greenfieldfileserver
+hostname
+-------------------------------------
+
+TASK 2
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow OpenSSH
+sudo ufw enable
+sudo ufw status
+-------------------------------------
+
+TASK 3
+sudo groupadd records
+sudo groupadd pharmacy
+sudo useradd aG records records1
+sudo useradd aG records records2
+sudo useradd aG pharmacy pharmacy1
+sudo useradd aG pharmacy pharmacy2
+getent groups records
+getent groups phamarcy
+-------------------------------------
+
+TASK 4
+mkdir -p /srv/greenfield/Records
+mkdir -p /srv/greenfield/Pharmacy
+sudo chgrp records /srv/greenfield/Records
+sudo chgrp pharmacy /srv/greenfield/Pharmacy
+sudo chmod 2770 /srv/greenfield/Records
+sudo chmod 2770 /srv/greenfield/Pharmacy
+-------------------------------------
+
+TASK 5
+Created departmental files and verified ownership.
+-------------------------------------
+
+TASK 6
+Verified departmental access restrictions and SGID inheritance.
